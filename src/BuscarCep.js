@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from './BuscarCep.module.css'
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
+
 const BuscaCep = () => {
   const [cep, setCep] = useState('');
   const [endereco, setEndereco] = useState("");
@@ -13,23 +16,25 @@ const BuscaCep = () => {
 
   return (
     <div>
-      <h1>Digite o CEP</h1>
+      <h1 style={{color: "white"}}>Buscar CEP</h1>
       <div>
       <label>
-       
-        <input className={styles.input} type="text" value={cep} onChange={(e) => setCep(e.target.value)} />
+      <Form.Control placeholder='CEP' value={cep} onChange={(e) => setCep(e.target.value)} style={{margin: "10px auto"}} />
       </label>
       </div>
-      <button className={styles.button}onClick={buscarCep}>Buscar</button>
+    
+      <Button onClick={buscarCep} variant="secondary">Search</Button>{' '}
       {endereco && (
         <div>
             { /* Aqui será chamado os atriburos do objeto */}
-          <h2 >Endereço encontrado:</h2>
-          <p>CEP: {endereco.cep}</p>
-          <p>Logradouro: {endereco.logradouro}</p>
-          <p>Bairro: {endereco.bairro}</p>
-          <p>Cidade: {endereco.localidade}</p>
-          <p>Estado: {endereco.uf}</p>
+          <h2 style={{color: "#efefef"}}>Endereço encontrado:</h2>
+          <div style={{border: "3px solid black"}}>
+          <p style={{color: "white"}}><b>CEP:</b> {endereco.cep}</p>
+          <p style={{color: "white"}}><b>Logradouro:</b> {endereco.logradouro}</p>
+          <p style={{color: "white"}}><b>Bairro:</b> {endereco.bairro}</p>
+          <p style={{color: "white"}}><b>Cidade:</b> {endereco.localidade}</p>
+          <p style={{color: "white"}}><b>Estado:</b> {endereco.uf}</p>
+          </div>
         </div>
       )}
     </div>
