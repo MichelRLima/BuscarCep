@@ -24,7 +24,7 @@ const BuscaCep = () => {
       <div>
         <label>
           <Form.Control
-            type="text"
+            type="number"
             placeholder="CEP"
             value={cep}
             onChange={(e) => setCep(e.target.value)}
