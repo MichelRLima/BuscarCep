@@ -9,12 +9,15 @@ const BuscaCep = () => {
   const [cep, setCep] = useState('');
   const [endereco, setEndereco] = useState("");
 
+  
   const buscarCep = async () => {
+    
+    
     const resposta = await axios.get(`https://viacep.com.br/ws/${cep}/json/`); //fazendo aquisição da api dos correois
-    console.log(typeof(resposta))
+ 
     setEndereco(resposta.data); //Setando o objeto em endereço
   };
-
+  
   return (
     <div>
       <h1 style={{color: "white"}}>Buscar CEP</h1>
@@ -25,7 +28,8 @@ const BuscaCep = () => {
       </div>
     
       <Button onClick={buscarCep} variant="secondary">Search</Button>{' '}
-      {endereco && (
+      {endereco &&
+       (
         <div>
             { /* Aqui será chamado os atriburos do objeto */}
           <h2 className={styles.titulo}>Endereço encontrado:</h2>
