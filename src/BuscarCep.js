@@ -28,12 +28,12 @@ const BuscaCep = () => {
         <div>
             { /* Aqui será chamado os atriburos do objeto */}
           <h2 style={{color: "#efefef"}}>Endereço encontrado:</h2>
-          <div style={{border: "3px solid black"}}>
-          <p style={{color: "white"}}><b>CEP:</b> {endereco.cep}</p>
-          <p style={{color: "white"}}><b>Logradouro:</b> {endereco.logradouro}</p>
-          <p style={{color: "white"}}><b>Bairro:</b> {endereco.bairro}</p>
-          <p style={{color: "white"}}><b>Cidade:</b> {endereco.localidade}</p>
-          <p style={{color: "white"}}><b>Estado:</b> {endereco.uf}</p>
+          <div style={{border: "3px solid white", borderRadius: "10px" ,width: "100%", maxWidth: "500px", margin: "0 auto", padding: "10px"}}>
+          <p style={{color: "white", fontSize: "25px"}}><b>CEP:</b> {endereco.cep}</p>
+          <p style={{color: "white", border: "1px solid white", borderRadius: "10px"}}><b >Logradouro:</b> {endereco.logradouro}</p>
+          <p style={{color: "white", border: "1px solid white", borderRadius: "10px"}}><b>Bairro:</b> {endereco.bairro}</p>
+          <p style={{color: "white", border: "1px solid white", borderRadius: "10px"}}><b>Cidade:</b> {endereco.localidade}</p>
+          <p style={{color: "white", border: "1px solid white", borderRadius: "10px"}}><b>Estado:</b> {endereco.uf}</p>
           </div>
         </div>
       )}
